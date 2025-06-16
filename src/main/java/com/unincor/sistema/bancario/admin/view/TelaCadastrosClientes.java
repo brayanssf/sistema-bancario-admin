@@ -8,7 +8,7 @@ package com.unincor.sistema.bancario.admin.view;
  *
  * @author Brayan
  */
-public class TelaCadastrosClientes extends javax.swing.JFrame {
+public class TelaCadastrosClientes extends javax.swing.JDialog {
 
     /**
      * Creates new form TelaCadastrosClientes
