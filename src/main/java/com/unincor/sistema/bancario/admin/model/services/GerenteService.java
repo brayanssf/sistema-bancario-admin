@@ -8,6 +8,8 @@ import com.unincor.sistema.bancario.admin.exceptions.CadastroException;
 import com.unincor.sistema.bancario.admin.model.dao.GerenteDao;
 import com.unincor.sistema.bancario.admin.model.domain.Gerente;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -28,8 +30,26 @@ public class GerenteService {
         gerenteDao.inserir(gerente);
     }
     
+    public void inserir (Gerente gerente) {
+        
+    }
+    
     public List<Gerente> buscarGerentes() {
         return gerenteDao.buscarTodosGerentes();
+    }
+    
+    public static void main(String[] args) {
+        GerenteService gerenteService = new GerenteService();
+        Gerente gerente = new Gerente();
+        
+        gerente.setNome("Luiz");
+        gerente.setCpf("0011223344551");
+        
+         try {
+            gerenteService.salvarGerente(gerente);
+        } catch (CadastroException ex) {
+            Logger.getLogger(GerenteService.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }

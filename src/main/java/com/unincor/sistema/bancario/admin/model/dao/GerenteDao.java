@@ -24,7 +24,7 @@ public class GerenteDao {
 
     public void inserirGerente(Gerente gerente) {
 
-        String sql = "INSERT INTO gerentes (nome, cpf, data_nascimento, email, telefone, senha_hash) VALUES (?, ? , ?, ?, ?, ?)";
+        String sql = "INSERT INTO gerentes (nome, cpf, data_nascimento, email, telefone, senha_hash) VALUES (?, ? , ?, ?, ?, ?, ?)";
 
         try (Connection con = MySQL.connect(); PreparedStatement ps = con.prepareStatement(sql)){
             ps.setString(1, gerente.getNome());
@@ -88,6 +88,6 @@ public class GerenteDao {
     }
 
     public void inserir(Gerente gerente) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
     }
 }
